@@ -1,0 +1,4 @@
+Benchmark                                   Mode  Cnt  Score    Error  Units
+compilerTrick.BenchMarkTarget.createObject  avgt    5  0.434 ±  0.090  ns/op
+compilerTrick.BenchMarkTarget.doNothing     avgt    5  0.418 ±  0.001  ns/op
+compilerTrick.BenchMarkTarget.getObject     avgt    5  3.828 ±  0.128  ns/op
