@@ -17,6 +17,11 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web:2.7.2")
 
+    jmh("org.openjdk.jmh:jmh-core:1.36")
+    jmh("org.openjdk.jmh:jmh-generator-annprocess:1.36")
+    // this is the line that solves the missing /META-INF/BenchmarkList error
+    jmhAnnotationProcessor("org.openjdk.jmh:jmh-generator-annprocess:1.36")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.7.2")
 }
 
@@ -33,9 +38,9 @@ tasks.withType<Javadoc>() {
     options.encoding = "UTF-8"
 }
 
-jmh {
-    fork.set(1)
-    warmupIterations.set(3)
-    iterations.set(3)
-    timeUnit.set("ms")
-}
+//jmh {
+//    fork.set(1)
+//    warmupIterations.set(3)
+//    iterations.set(3)
+//    timeUnit.set("ms")
+//}
