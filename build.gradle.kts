@@ -23,7 +23,7 @@ dependencies {
 group = "org.roon"
 version = "0.0.1-SNAPSHOT"
 description = "JMHPractice"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 tasks.withType<JavaCompile>() {
     options.encoding = "UTF-8"
@@ -31,4 +31,11 @@ tasks.withType<JavaCompile>() {
 
 tasks.withType<Javadoc>() {
     options.encoding = "UTF-8"
+}
+
+jmh {
+    fork.set(1)
+    warmupIterations.set(3)
+    iterations.set(3)
+    timeUnit.set("ms")
 }
