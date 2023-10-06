@@ -19,10 +19,14 @@ dependencies {
 
     jmh("org.openjdk.jmh:jmh-core:1.36")
     jmh("org.openjdk.jmh:jmh-generator-annprocess:1.36")
+
     // this is the line that solves the missing /META-INF/BenchmarkList error
     jmhAnnotationProcessor("org.openjdk.jmh:jmh-generator-annprocess:1.36")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.7.2")
+    testImplementation("org.openjdk.jmh:jmh-core:1.36")
+    testImplementation("org.openjdk.jmh:jmh-generator-annprocess:1.36")
+    testAnnotationProcessor("org.openjdk.jmh:jmh-generator-annprocess:1.36")
 }
 
 group = "org.roon"
