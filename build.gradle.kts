@@ -4,7 +4,7 @@
 
 plugins {
     `java-library`
-    `maven-publish`
+    id("me.champeau.jmh").version("0.6.6")
 }
 
 repositories {
@@ -15,11 +15,8 @@ repositories {
 }
 
 dependencies {
-    api("org.springframework.boot:spring-boot-starter-web:2.7.2")
-    api("org.projectlombok:lombok:1.18.24")
-    api("org.openjdk.jmh:jmh-core:1.33")
-    api("org.openjdk.jmh:jmh-generator-annprocess:1.33")
-    api("com.google.guava:guava:31.0.1-jre")
+    implementation("org.springframework.boot:spring-boot-starter-web:2.7.2")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.7.2")
 }
 
@@ -27,12 +24,6 @@ group = "org.roon"
 version = "0.0.1-SNAPSHOT"
 description = "JMHPractice"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
-
-publishing {
-    publications.create<MavenPublication>("maven") {
-        from(components["java"])
-    }
-}
 
 tasks.withType<JavaCompile>() {
     options.encoding = "UTF-8"
